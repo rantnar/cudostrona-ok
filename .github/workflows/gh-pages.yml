@@ -1,5 +1,5 @@
 on:
-  workflow-dispatch:
+  workflow-dispatch: true
     push:
     branches:
       - gh-pages
