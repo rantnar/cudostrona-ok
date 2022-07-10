@@ -11,10 +11,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: cudostrona.pl
+        server: ftp.cudostrona.pl
         username: my_webapp
         password: ${{ secrets.PASSWORD }}
-        protocol: ftps
+        protocol: ftp
         port: 22
         local-dir: ./public/
         server-dir: /www/
