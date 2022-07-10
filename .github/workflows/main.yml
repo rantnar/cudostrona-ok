@@ -32,6 +32,7 @@ jobs:
       run: sleep 60s
       shell: bash
   notify:
+    needs: build
     runs-on: ubuntu-latest
     name: deploy
     steps:
