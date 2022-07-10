@@ -19,11 +19,12 @@ jobs:
           extended: true
       - name: Build
         run: hugo --minify
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@master
+          with:
+            name: website
+            path: './public'
+
+      
       - name: Checkout
         uses: actions/checkout@v2
       - name: deploy file
