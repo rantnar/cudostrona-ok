@@ -1,8 +1,7 @@
 on:
-  workflow-dispatch: true
     push:
-    branches:
-      - gh-pages
+      branches:
+        - gh-pages
 
 jobs:
   deploy_job:
