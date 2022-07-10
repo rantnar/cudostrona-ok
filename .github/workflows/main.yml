@@ -25,3 +25,16 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          name: deploy
+    steps:
+      - name: FTP
+        uses: actions/checkout@v2
+      - name: deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.3
+        with:
+          username: 'root'
+          server: 'cudostrona.pl'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          local_path: 'tree/gh-pages/*'
+          remote_path: '/var/www/my_webapp/www/'
+          delete_remote_files: true
