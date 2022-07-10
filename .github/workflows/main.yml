@@ -24,7 +24,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./public/
       - name: FTP
         uses: actions/checkout@v2
       - name: deploy file
