@@ -1,11 +1,25 @@
-on: 
-  push:
-    branches:
-      - source
+on: [push]
 
 jobs:
+
+
+env:
+  TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #  HUGO_ARGS: '--minify'
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛎 Check out master
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: 🚀 Build and deploy
+        uses: victoriadrake/hugo-latest-cd@master
+
   notify:
-    needs: deploy_job
+    needs: build
     runs-on: ubuntu-latest
     name: deploy
     steps:
