@@ -48,8 +48,9 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
           personal_token: ${{ secrets.SUPER_GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./public/
           publish_branch: master
+          keep_files: true
 
   notify:
     needs: build
