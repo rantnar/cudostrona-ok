@@ -1,3 +1,4 @@
+name ftp
 on:
   workflow_run:
     workflows: ["main"]
