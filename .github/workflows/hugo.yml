@@ -29,7 +29,7 @@ jobs:
       uses: aormsby/hugo-deploy-to-pages@v2.1
       id: build_step  # <<for outputs>>
       with:
-        source_branch: 'master'
+        source_branch: 'source'
         release_branch: 'master'
         # submodule_release_branch: 'subbed' <<only provide if you are publishing to directory with git submodule>>
         full_rebuild: true
