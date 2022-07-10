@@ -32,7 +32,7 @@ jobs:
         source_branch: 'source'
         release_branch: 'master'
         # submodule_release_branch: 'subbed' <<only provide if you are publishing to directory with git submodule>>
-        full_rebuild: false
+        full_rebuild: true
         strict_build_mode: false
         # hugo_publish_directory: 'documents'   <<publish to another directory if needed>>
         hugo_build_options: '--minify'
