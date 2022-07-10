@@ -27,7 +27,7 @@ _merge = "none"
   # use [params.contact.email] instead.
   #email = "john.doe@example.com"
   description = "Wizytówka"
-  bio = "Tworzę strony internetowe. \n\n I nie tylko."
+  bio = "Tworzę strony internetowe. \n\n I nie tylko. 1"
   avatar = "img/avatar.jpg"
   favicon = "img/favicon.ico"
   error404 = "Nie ma takiej strony."
