@@ -15,6 +15,6 @@ jobs:
         port: 22
         protocol: ftps
         username: my_webapp
-        password: ${{ secrets.ftp.password }}
+        password: ${{ secrets.password }}
         #server-dir: www/
         #local-dir: public/
