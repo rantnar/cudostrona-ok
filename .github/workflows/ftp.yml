@@ -2,7 +2,7 @@ on:
   workflow_run:
     workflows: ["main.yml"]
     types:
-      - completed
+    - completed
 jobs:
   deploy_job:
     runs-on: ubuntu-latest
