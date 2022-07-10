@@ -51,3 +51,5 @@ jobs:
         external_repository: rantnar/cudostrona-final
         publish_branch: main  # default: gh-pages
         publish_dir: ./public
+        exclude_assets: '.github'
+        destination_dir: public
