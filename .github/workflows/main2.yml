@@ -1,11 +1,11 @@
 on: [push]
-
-jobs:
-
-
 env:
   TOKEN: ${{ secrets.GITHUB_TOKEN }}
   #  HUGO_ARGS: '--minify'
+jobs:
+
+
+
   build:
 
     runs-on: ubuntu-latest
