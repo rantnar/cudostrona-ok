@@ -27,7 +27,7 @@ _merge = "none"
   # use [params.contact.email] instead.
   #email = "john.doe@example.com"
   description = "Wizytówka"
-  bio = "Tworzę strony internetowe. \n I nie tylko."
+  bio = "Tworzę strony internetowe. \n\n I nie tylko."
   avatar = "img/avatar.jpg"
   favicon = "img/favicon.ico"
   error404 = "Nie ma takiej strony."
@@ -40,7 +40,7 @@ _merge = "none"
     # Just make sure not to mix key-value pairs, inline tables and tables,
     # although keeping keeping this order is ok.
     # See https://toml.io/en/v1.0.0 for details
-    0 = { name = "ello", icon = "ello", style = "fab", link = "" } # empty links are relative to site root
+    #0 = { name = "ello", icon = "ello", style = "fab", link = "" } # empty links are relative to site root
     [params.contact.email]
       name = "email" # may be omitted. defaults to key name
       icon = "envelope" # may be omitted. defaults to key name
