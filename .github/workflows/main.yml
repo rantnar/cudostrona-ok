@@ -12,8 +12,8 @@ jobs:
         with:
           username: 'my_webapp'
           server: 'cudostrona.pl'
-          #ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
           local_path: './public/*'
           remote_path: 'www/'
           sftpArgs: '-o ConnectTimeout=5'
-          passowrd: ${{ secrets.password }}
+          password: ${{ secrets.password }}
