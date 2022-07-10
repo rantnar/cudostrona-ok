@@ -11,10 +11,7 @@ jobs:
     name: Build and deploy Hugo site
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: true  # Fetch Hugo themes (true OR recursive)
-        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+    
     
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
@@ -22,14 +19,10 @@ jobs:
         hugo-version: '0.88.1'
     
     - name: Checkout repo on source_branch
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       with:
-        submodules: 'recursive'
-        # <<recommended if project uses git submodules for any purpose>>
-        # <<required if deploying to git submodule directory>>
-        #token: ${{ secrets.MY_SECRET }}   # <<if needed for private repos>>
-        fetch-depth: '0'
-        # <<fetch-depth: '0' currently required until shallow clone problems are solved>>
+        submodules: true  # Fetch Hugo themes (true OR recursive)
+        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
         
     - name: Build site and push to release branch
       uses: aormsby/hugo-deploy-to-pages@v2.1
