@@ -1,19 +1,16 @@
-on: [push]
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  deploy_job:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-    name: deploy
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.3
-        with:
-          username: 'my_webapp'
-          server: 'cudostrona.pl'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: './public/*'
-          remote_path: 'www/'
-          sftpArgs: '-o ConnectTimeout=5'
-          password: ${{ secrets.password }}
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftp.cudostrona.pl
+        username: my_webapp
+        password: ${{ secrets.password }}
