@@ -5,36 +5,36 @@ jobs:
     runs-on: ubuntu-latest
     name: deploy
     steps:
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-        hugo-version: 'latest'
-        extended: true
-      - name: Checkout repo on source_branch
-        uses: actions/checkout@v3
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-      - name: Build site and push to release branch
-        uses: aormsby/hugo-deploy-to-pages@v2.1
-        id: build_step  # <<for outputs>>
-        with:
-          source_branch: 'source'
-          release_branch: 'master'
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+      hugo-version: 'latest'
+      extended: true
+    - name: Checkout repo on source_branch
+      uses: actions/checkout@v3
+      with:
+        submodules: true  # Fetch Hugo themes (true OR recursive)
+        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+    - name: Build site and push to release branch
+      uses: aormsby/hugo-deploy-to-pages@v2.1
+      id: build_step  # <<for outputs>>
+      with:
+        source_branch: 'source'
+        release_branch: 'master'
         # submodule_release_branch: 'subbed' <<only provide if you are publishing to directory with git submodule>>
-          full_rebuild: true
-          strict_build_mode: false
+        full_rebuild: true
+        strict_build_mode: false
         # hugo_publish_directory: 'documents'   <<publish to another directory if needed>>
-          hugo_build_options: '--minify'
+        hugo_build_options: '--minify'
         # commit_message: "I love this action."
-          test_mode: false
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.3
-        with:
-          username: 'root'
-          server: 'cudostrona.pl'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: './public/*'
-          remote_path: '/var/www/my_webapp/www/'
+        test_mode: false
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: deploy file
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.3
+      with:
+        username: 'root'
+        server: 'cudostrona.pl'
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+        local_path: './public/*'
+        remote_path: '/var/www/my_webapp/www/'
