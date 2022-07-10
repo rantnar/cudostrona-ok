@@ -39,6 +39,6 @@ jobs:
           username: 'root'
           server: 'cudostrona.pl'
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-          local_path: '/tree/gh-pages/*'
+          local_path: './public/*'
           remote_path: '/var/www/my_webapp/www/'
           delete_remote_files: true
