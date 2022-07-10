@@ -1,42 +1,6 @@
-on: 
-  push:
-    branches:
-      - source
+on: [push]
 
 jobs:
-  deploy_job:
-    runs-on: ubuntu-latest
-    name: deploy
-    steps:
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: 'latest'
-        extended: true
-    - name: Checkout repo on source_branch
-      uses: actions/checkout@v3
-      with:
-        submodules: true  # Fetch Hugo themes (true OR recursive)
-        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-    - name: Build site and push to release branch
-      uses: aormsby/hugo-deploy-to-pages@v2.1
-      id: build_step  # <<for outputs>>
-      with:
-        source_branch: 'origin/source'
-        release_branch: 'origin/master'
-        # submodule_release_branch: 'subbed' <<only provide if you are publishing to directory with git submodule>>
-        full_rebuild: true
-        strict_build_mode: false
-        # hugo_publish_directory: 'documents'   <<publish to another directory if needed>>
-        hugo_build_options: '--minify'
-        # commit_message: "I love this action."
-        test_mode: false
-        git_config_email: 'kulinski90@gmail.com'
-        git_config_user: 'Łukasz Kuliński'
-        hugo_publish_directory: 'public'
-    - name: Sleep for 30 seconds
-      run: sleep 30s
-      shell: bash
   notify:
     needs: deploy_job
     runs-on: ubuntu-latest
