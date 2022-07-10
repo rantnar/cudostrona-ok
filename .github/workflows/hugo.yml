@@ -36,7 +36,7 @@ jobs:
         # hugo_publish_directory: 'documents'   <<publish to another directory if needed>>
         hugo_build_options: '--minify'
         # commit_message: "I love this action."
-        test_mode: true
+        test_mode: false
 
         # <<lots of other options!>>
 
