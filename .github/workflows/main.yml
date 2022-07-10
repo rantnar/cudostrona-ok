@@ -13,7 +13,7 @@ jobs:
           hugo-version: latest
           extended: true;
       - name: Build
-          run: hugo --minifyh
+          run: hugo --minify
       - name: Checkout
         uses: actions/checkout@v2
       - name: deploy file
