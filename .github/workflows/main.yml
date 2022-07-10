@@ -28,8 +28,11 @@ jobs:
         hugo_build_options: '--minify'
         # commit_message: "I love this action."
         test_mode: false
+        git_config_email: 'kulinski90@gmail.com'
+        git_config_user: 'Łukasz Kuliński'
+        hugo_publish_directory: 'public'
     - name: Sleep for 30 seconds
-      run: sleep 60s
+      run: sleep 30s
       shell: bash
   notify:
     needs: deploy_job
