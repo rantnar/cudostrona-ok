@@ -1,18 +1,20 @@
 on: push
-name: Publish Website Dry Run
+name: 🚀 Deploy website on push
 jobs:
   web-deploy:
-    name: 🚀 Deploy website every commit
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v2.1.0
+      uses: actions/checkout@v2
 
     - name: 📂 Sync files
-      uses: SamKirkland/web-deploy@1.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        ftp-server: cudostrona.pl
-        ftp-username: my_webapp
-        ftp-password: ${{ secrets.PASSWORD }}
-        source-path: ./www/
-        
+        server: cudostrona.pl
+        username: my_webapp
+        password: ${{ secrets.PASSWORD }}
+        protocol: ftp
+        port: 22
+        local-dir: ./public/
+        server-dir: /www/
