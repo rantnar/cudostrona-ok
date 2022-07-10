@@ -14,7 +14,7 @@ jobs:
         server: cudostrona.pl
         username: my_webapp
         password: ${{ secrets.PASSWORD }}
-        protocol: ftp
+        protocol: ftps
         port: 22
         local-dir: ./public/
         server-dir: /www/
