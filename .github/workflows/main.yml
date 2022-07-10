@@ -28,6 +28,9 @@ jobs:
         hugo_build_options: '--minify'
         # commit_message: "I love this action."
         test_mode: false
+    - name: Sleep for 30 seconds
+      run: sleep 60s
+      shell: bash
     - name: Checkout
       uses: actions/checkout@v2
     - name: deploy file
