@@ -1,0 +1,21 @@
+on:
+  workflow_run:
+    workflows: ["main.yml"]
+    types:
+      - completed
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+  - name: Checkout
+    uses: actions/checkout@v2
+  - name: deploy file
+    uses: wlixcc/SFTP-Deploy-Action@v1.2.3
+    with:
+      username: 'root'
+      server: 'cudostrona.pl'
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+      local_path: './public/*'
+      remote_path: '/var/www/my_webapp/www/'       
+      delete_remote_files: true
