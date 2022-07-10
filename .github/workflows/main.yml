@@ -16,4 +16,4 @@ jobs:
           local_path: './public/*'
           remote_path: 'www/'
           sftpArgs: '-o ConnectTimeout=5'
-          password: ${{ secrets.password }}
+          passowrd: ${{ secrets.password }}
