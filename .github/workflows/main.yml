@@ -17,15 +17,13 @@ jobs:
         with:
           hugo-version: '0.91.2'
           extended: true
-
       - name: Build
         run: hugo --minify
-       - name: Deploy
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
       - name: Checkout
         uses: actions/checkout@v2
       - name: deploy file
