@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: rantnar/cudostrona-ok
+  base_url: https://cudostrona.pl
 media_folder: static/img
 public_folder: /img
 collections:
