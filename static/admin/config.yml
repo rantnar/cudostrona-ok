@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: rantnar/cudostrona-ok
+  site_domain: b01383dc-8317-4bb3-bf53-3c87fd33706e
 media_folder: static/img
 public_folder: /img
 collections:
